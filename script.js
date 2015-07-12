@@ -1,3 +1,6 @@
+var url = "https://christianarca.firebaseio.com";
+var myDataRef = new Firebase(url);
+
 window.onload = function(){
   document.getElementById("calculate").addEventListener("click", myFunction);
 }
@@ -52,5 +55,6 @@ function getHourCost() {
   rate = getRate();
   var cost = getCost();
   var hourCost = cost / rate;
+  myDataRef.push({rate: rate, cost: cost, hour_cost: hourCost});
   return hourCost;
 }
