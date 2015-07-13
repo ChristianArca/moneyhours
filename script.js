@@ -8,7 +8,7 @@ window.onload = function(){
 
 function myFunction() {
     var x = getHourCost();
-    document.getElementById("result").innerHTML = "That will cost you " + x + " of your time.";
+    document.getElementById("result").innerHTML = "That will cost you " + x + " hours of your time.";
 }
 
 function getPayPeriod(){
