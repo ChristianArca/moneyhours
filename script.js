@@ -1,8 +1,22 @@
 var url = "https://christianarca.firebaseio.com";
 var myDataRef = new Firebase(url);
 
+function getCalculations(ref, cb) {
+  ref.once('value', function(snap){
+    cb(snap.numChildren());
+  });
+}
+
+
+
+function displayChildren(children){
+  console.log(children);
+  $("#numCalculations").append(children + " calculations have been made.");
+}
+
 window.onload = function(){
   document.getElementById("calculate").addEventListener("click", myFunction);
+  getCalculations(myDataRef, displayChildren);
 }
 
 
